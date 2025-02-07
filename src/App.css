@@ -1,0 +1,248 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1e3c72, #2a5298);
+  font-family: 'Poppins', sans-serif;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow-x: hidden;
+  animation: gradientShift 6s infinite alternate ease-in-out;
+}
+/* Background Gradient Animation */
+@keyframes gradientShift {
+  0% {
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+  }
+  100% {
+    background: linear-gradient(135deg, #2a5298, #1e3c72);
+  }
+}
+/* Main container with fade-in effect */
+.container {
+  width: 80vw;
+  margin: 30px auto;
+  text-align: center;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  animation: fadeIn 1s ease-in-out;
+}
+/* Fade-in effect */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+h1 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #ffcc00;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+  animation: slideDown 0.8s ease-in-out;
+}
+/* Slide down animation */
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Search Section */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+/* Search Input */
+input {
+  padding: 12px;
+  width: 82%;
+  border: 2px solid #ffcc00;
+  border-radius: 8px;
+  font-size: 16px;
+  color: #222;
+  background: white;
+  transition: 0.3s ease-in-out;
+}
+input:focus {
+  outline: none;
+  border-color: #ff8800;
+  box-shadow: 0 0 8px rgba(255, 136, 0, 0.5);
+}
+button {
+  padding: 12px 20px;
+  background: #ffcc00;
+  color: #222;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s;
+  width: auto;
+  min-width: 100px;
+  animation: bounce 2s infinite ease-in-out;
+}
+button:hover {
+  background: #ff8800;
+  box-shadow: 0 4px 8px rgba(255, 136, 0, 0.5);
+  transform: scale(1.05);
+}
+@media (max-width: 500px) {
+  .search-container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  button {
+    width: 88%;
+  }
+}
+/* Student Details with Slide-In */
+#event-details, #student-details {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  text-align: left;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1100px;
+  word-wrap: break-word;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 1024px) {
+  #event-details, #student-details {
+    width: 95%;
+    max-width: 900px;
+  }
+}
+
+@media (max-width: 600px) {
+  #event-details, #student-details {
+    padding: 15px;
+    text-align: center;
+    width: 90%;
+  }
+}
+#student-details h2{
+  color: #ffcc00;
+}
+#event-details h2{
+  color: #ffcc00;
+}
+/* Slide-in effect */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+/* Hover effect on cards */
+#student-details:hover, #event-details:hover {
+  transform: scale(1.02);
+  box-shadow: 0px 6px 15px rgba(255, 255, 255, 0.3);
+  transition: 0.3s ease-in-out;
+}
+/* Event Box */
+.event-box {
+  border: 2px solid #ffcc00;
+  padding: 15px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.2);
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  text-align: left;
+}
+.event-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 15px rgba(255, 255, 0, 0.3);
+}
+@media (max-width: 600px) {
+  .event-box {
+    padding: 10px;
+    text-align: center;
+  }
+}
+/* Adjust Events Grid */
+.events-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 20px;
+  width: 100%;
+  max-width: 1100px;
+  margin: auto;
+}
+@media (max-width: 600px) {
+  .events-grid {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}
+.download-btn {
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #ffcc00, #ff8800);
+  color: #222;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: 0.3s ease-in-out;
+  width: auto;
+  min-width: 120px;
+}
+.download-btn:hover {
+  background: linear-gradient(135deg, #ff8800, #ffcc00);
+  transform: scale(1.1);
+  box-shadow: 0px 6px 12px rgba(255, 204, 0, 0.5);
+}
+@media (max-width: 600px) {
+  .download-btn {
+    width: 100%;
+  }
+}
+/* Links */
+a {
+  color: #ffcc00;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+a:hover {
+  text-decoration: underline;
+  color: #ff8800;
+  transform: scale(1.05);
+}
+/* Animate Certificate Links */
+.event-box a {
+  display: inline-block;
+  transition: transform 0.2s ease-in-out;
+}
+.event-box a:hover {
+  transform: rotate(-3deg) scale(1.1);
+}
